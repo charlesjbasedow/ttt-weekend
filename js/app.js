@@ -1,6 +1,15 @@
 /*-------------------------------- Constants --------------------------------*/
-
-
+const winningCombos = [
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+  [0, 3, 6],
+  [1, 4, 7],
+  [2, 5, 8],
+  [0, 4, 8],
+  [2, 4, 6],
+]
+  
 /*---------------------------- Variables (state) ----------------------------*/
 let boardArray = []
 let playerTurn = null
@@ -24,7 +33,7 @@ statusMsg = document.querySelector('.game-status')
 init()
 
 function init () {
-  boardArray = boardArray(9).fill(null)
+  boardArray = new Array(9).fill(null)
   playerTurn = 1
   gameWinner = null
   
@@ -41,21 +50,21 @@ boardArray.forEach((sqr, idx) => {
   } else if (boardArray[idx] === null) {
     squareLetter = ''
   }
-  sqr.innerText = squareLetter
+  
   
   currentGameStatus()
 })
 
 function currentGameStatus() {
   if (gameWinner !== null) {
-    statusMsg.textContent = `${playerTurn === 1}, it's your turn to act`
+    statusMsg.textContent = `Player ${playerTurn === 1 ? 'X' : 'O'}, it's your turn to act`
   } else if (gameWinner === 'T') {
     statusMsg.textContent = 'This match resulted in a DRAW!'
   } else {
-    statusMsg.textContent = `Congrats ${gameWinner === 1}! You are the WINNER`
+    statusMsg.textContent = `Congrats ${gameWinner === 1 ? 'X' : 'O'}'s! You are the WINNER`
 }
 }
-
+}
 
 
 
