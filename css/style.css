@@ -19,7 +19,7 @@ h1 {
 h2 {
   color:black;
   text-align: center;
-  font-size: 22;
+  font-size: 18px;
   }
 
 section.board {
@@ -40,8 +40,7 @@ div.square {
 
 button {
   margin: auto;
-  font-size: 20px;
-  padding: 8px;
+  font-size: 18px;
+  padding: 4px;
   border-radius: 8px;
-
 }

@@ -84,16 +84,17 @@ function handleClick(evt) {
   function getWinner() {
   
     for (let i = 0; i < winningCombos.length; i++) {
-      if( Math.abs( boardArray[ winningCombos[i][0] ] + boardArray[ winningCombos[i][1] ] + 
-        boardArray[ winningCombos[i][2] ]) === 3 ) {
+      if(Math.abs(boardArray[winningCombos[i][0]] + boardArray[winningCombos[i][1]] + 
+        boardArray[winningCombos[i][2] ]) === 3 ) {
+          
           return boardArray[winningCombos[i][0]]
         }
     }
-  
+    
     if (boardArray.includes(null)) {
     return null
-    } else {
+    
+  } else {
       return 'T'
     }
-  }
-  
+  } 
